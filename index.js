@@ -8,7 +8,7 @@ const deps = packageJson.envDependencies
 
 Object.keys(deps).map(key => deps[key]).map(insertEnvironmentVariables).forEach(pkg => {
   try {
-    childProcess.execSync('yarn install --no-scripts --no-save ' + pkg, { stdio:[0, 1, 2] })
+    childProcess.execSync('yarn install --ignore-scripts --no-save ' + pkg, { stdio:[0, 1, 2] })
   } catch (e) { }
 })
 
